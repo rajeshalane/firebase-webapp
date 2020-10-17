@@ -20,6 +20,9 @@
       			"sender":myName,
       			"message": message
     		});
+
+			// clear the textfield after submit 
+			"message"= "";
     		return false;
   		}
   		firebase.database().ref("messages").on("child_added",function(snapshot) {
@@ -49,8 +52,8 @@
 	<div id="grad">
 		<h1 class="text-center">Chat App using Firebase</h1>
 		<div id="main">
-			<form onsubmit="return sendMessage();">
- 	 			<input id="message" placeholder="Enter message" autocomplete="off">
+			<form onsubmit="return sendMessage();" style="box-sizing: border-box; height: 20px;">
+ 	 			<input id="message" placeholder="Enter message" autocomplete="off" style="height:33px;">
     			<input type="submit">
   			</form>
   			<ul id="messages"></ul>

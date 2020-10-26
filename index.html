@@ -1,7 +1,15 @@
-<html>
+<html id="sidjs">
 	<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+ <!--  <script src="three.r119.min.js"></script>
+  <script src="vanta.birds.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+    <script src="https://www.vantajs.com/dist/vanta.clouds.min.js"></script>
+  <link href="main.css" rel="stylesheet">
+  <!-- <script src="VJS.js"></script> -->
+  
 	<script>
     	var firebaseConfig = {
     		apiKey: "AIzaSyAXF7jLXYmVlyHX7beeQMzZo3pe3lCkr6A",
@@ -49,59 +57,33 @@
     		document.getElementById("message-" + snapshot.key).innerHTML = "This message has been removed";
 		});
 	</script>
-	<div id="grad">
+<!-- div id="grad">
+
+</div>
+ -->
+ <body>
+	
 		<h1 class="text-center">Chat App using Firebase</h1>
 		<div id="main">
 			<form onsubmit="return sendMessage();" style="box-sizing: border-box; height: 20px;">
  	 			<input id="message" placeholder="Enter message" autocomplete="off" style="height:33px;">
-    			<input type="submit">
+    			<input class="btn btn-success btn-sm" type="submit">
   			</form>
   			<ul id="messages"></ul>
 		</div>
 		<div class="footer text-center">
 			<p>Made with <i class="fa fa-heart-o"></i> by Rajesh Alane</p>
 		</div>
-	</div>
-	<style>
-		.text-center {
-  			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  			transition: 0.3s;
-  			width: 50%;
-  			text-align: center;
-  			width:800px; margin:0 auto;
-  			margin-bottom: 5px;
-		}
-		.card:hover {
-  			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-		}
-		button{
-    	    background-color: lightblue;
-        	border-radius: 20px;
-    	}
-		#main{
-			text-align: center;
-			margin: auto;
-			padding: 10px;
-			margin-bottom: 2px;
-		}
-		input[type=submit] {
-			background-color: lightgreen
-  			width: 10%;
-  			padding: 10px 10px;
-  			margin: 4px 0;
-		}
-		.footer
-		{
-			background: #000;
-			height: 20px;
-			width: 100%
-			margin-top: 50px;
-			color: #fff;
-		}
-		#grad {
-			border:	3px black;
-  			background-image: linear-gradient(-90deg, red, yellow);
-  			height: 100%;
-		}
-	</style>
+	
+	</body>
+  <script>
+  VANTA.CLOUDS({
+  el: "#sidjs",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00
+})
+</script>
 </html>
